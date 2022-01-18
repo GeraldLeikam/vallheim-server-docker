@@ -8,10 +8,10 @@ SCRIPT_PUBLIC="$(echo $PUBLIC | tr A-Z a-z)"
 
 if [ -n "${PUBLIC}" ];
 then
-  if [ $SCRIPT_PUBLIC = "true" ];
+  if [ "$(echo $PUBLIC | tr A-Z a-z)" = "true" ];
   then
     SCRIPT_PUBLIC=1
-  elif $SCRIPT_PUBLIC = "false" ];
+  elif [ "$(echo $PUBLIC | tr A-Z a-z)" = "false" ];
   then
     SCRIPT_PUBLIC=0
   else
