@@ -8,10 +8,10 @@ SCRIPT_PUBLIC=1
 
 if [ -n "${PUBLIC}" ];
 then
-  if [ "${PUBLIC,,}" = "true" ];
+  if [ $( tr '[:upper:]' '[:lower:]' <<<"$PUBLIC" ) = "true" ];
   then
     SCRIPT_PUBLIC=1
-  elif [ "${PUBLIC,,}" = "false" ];
+  elif [ $( tr '[:upper:]' '[:lower:]' <<<"$PUBLIC" ) = "false" ];
   then
     SCRIPT_PUBLIC=0
   else
