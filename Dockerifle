@@ -9,6 +9,7 @@ RUN cp -r /mnt/* /
 RUN /usr/games/steamcmd +exit
 COPY ./scripts/startup.sh /run/startup.sh
 RUN mkdir /valheim-server
+RUN mkdir /valheim-server/server
 RUN mkdir /valheim-server/save
 RUN chmod +x /run/startup.sh
 CMD /run/startup.sh

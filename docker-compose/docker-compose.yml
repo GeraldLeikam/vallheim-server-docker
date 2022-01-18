@@ -13,4 +13,5 @@ services:
       - SERVER_NAME="Drezaels TestServer"
       - WORLD_NAME=DrezaelsWorld
     volumes:
-      - ./server:/valheim-server
+      - ./server:/valheim-server/server
+      - ./save:/valheim-server/save
