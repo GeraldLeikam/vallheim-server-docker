@@ -17,6 +17,7 @@ then
   echo $SCRIPT_SERVER_NAME
   echo $SCRIPT_WORlD_NAME
   echo $SCRIPT_PUBLIC
+  echo $PUBLIC
 fi
 
 /usr/games/steamcmd +force_install_dir /valheim-server/server +login anonymous +app_update 896660 validate +exit
