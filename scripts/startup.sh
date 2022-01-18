@@ -2,9 +2,6 @@
 DEBUG=true
 SCRIPT_SERVER_NAME="${SERVER_NAME:-'Default Valheim Server'}"
 SCRIPT_WORlD_NAME="${WORLD_NAME:-'DefaultValheimWorld'}"
-SCRIPT_PUBLIC="$(echo $PUBLIC | tr A-Z a-z)"
-
-
 
 if [ -n "${PUBLIC}" ];
 then
@@ -21,15 +18,34 @@ else
   SCRIPT_PUBLIC=1
 fi
 
+if [ -n "${AUTOUPDATE}" ];
+then
+  if [ "$(echo $AUTOUPDATE | tr A-Z a-z)" = "true" ];
+  then
+    SCRIPT_AUTOUPDATE="true"
+  elif [ "$(echo $AUTOUPDATE | tr A-Z a-z)" = "false" ];
+  then
+    SCRIPT_AUTOUPDATE="false"
+  else
+    SCRIPT_AUTOUPDATE="false"
+  fi
+else
+  SCRIPT_AUTOUPDATE="false"
+fi
+
 if [ $DEBUG = "true" ];
 then
   echo $SCRIPT_SERVER_NAME
   echo $SCRIPT_WORlD_NAME
   echo $SCRIPT_PUBLIC
-  echo $PUBLIC
+  echo $SCRIPT_AUTOUPDATE
 fi
 
-/usr/games/steamcmd +force_install_dir /valheim-server/server +login anonymous +app_update 896660 validate +exit
+if [ $SCRIPT_AUTOUPDATE = "true"];
+then
+  /usr/games/steamcmd +force_install_dir /valheim-server/server +login anonymous +app_update 896660 validate +exit
+fi
+
 export templdpath=$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/valheim-server/server/linux64:$LD_LIBRARY_PATH
 export SteamAppId=892970
