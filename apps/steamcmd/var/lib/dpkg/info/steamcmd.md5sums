@@ -1,0 +1,8 @@
+4fbe9eff40bd82c3dec84050a6afd741  usr/games/steamcmd
+81dd26b7bcfc259d8e0ca6a4e7ba6dd0  usr/lib/games/steam/steamcmd
+689d34308f1cf6f6fc1345649af13114  usr/lib/games/steam/steamcmd.sh
+106afc3fa724d9df32d2f47600b07cb3  usr/share/doc/steamcmd/changelog.Debian.gz
+fca716e67331c39471c0adb578d34bb9  usr/share/doc/steamcmd/copyright
+8a91cdba286eb294116cfdbc660f532e  usr/share/doc/steamcmd/steamcmdcommands.txt.gz
+219120b2095bb92b2bd766ca4c1da715  usr/share/lintian/overrides/steamcmd
+c73675bf0649cc0b6137c242df12c786  usr/share/man/man6/steamcmd.6.gz
