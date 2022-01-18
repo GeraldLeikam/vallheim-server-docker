@@ -77,7 +77,7 @@ ARGUMENTS_STRING="-name \"${SCRIPT_SERVER_NAME}\" -port 2456 - world \"${SCRIPT_
 echo $ARGUMENT_STRING
 
 #/valheim-server/server/valheim_server.x86_64 -name "${SCRIPT_SERVER_NAME}" -port 2456 -world "${SCRIPT_WORlD_NAME}" -password "secret" -savedir /valheim-server/save -public $SCRIPT_PUBLIC
-/valheim-server/server/valheim_server.x86_64 "${ARGUMENTS_STRING}"
+/valheim-server/server/valheim_server.x86_64 "${ARGUMENT_STRING}"
 export LD_LIBRARY_PATH=$templdpath
 
 while true
