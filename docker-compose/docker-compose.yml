@@ -12,6 +12,7 @@ services:
     environment:
       - SERVER_NAME=Drezaels Default TestServer
       - WORLD_NAME=DrezaelsWorld
+      - PUBLIC=false
     volumes:
       - ./server:/valheim-server/server
       - ./save:/valheim-server/save
