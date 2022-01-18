@@ -3,16 +3,18 @@ DEBUG=true
 DEFAULT_SERVER_NAME="Default Valheim Server"
 DEFAULT_SERVER_PORT=2456
 DEFAULT_WORLD_NAME="DefaultGeneratedWorld"
+DEFAULT_SERVER_PASSWORD="secret"
 ARGUMENT_STRING=""
 if [ -n "${SERVER_NAME}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-name \"${SERVER_NAME}\" "; else ARGUMENT_STRING="${ARGUMENT_STRING}-name \"${DEFAULT_SERVER_NAME}\" "; fi
 if [ -n "${SERVER_PORT}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-port ${SERVER_PORT} "; else ARGUMENT_STRING="${ARGUMENT_STRING}-port ${DEFAULT_SERVER_PORT} "; fi
 if [ -n "${WORLD_NAME}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-world \"${WORLD_NAME}\" "; else ARGUMENT_STRING="${ARGUMENT_STRING}-world \"${DEFAULT_WORLD_NAME}\" "; fi
+if [ -n "${SERVER_PASSWORD}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-password \"${SERVER_PASSWORD}\" "; else ARGUMENT_STRING="${ARGUMENT_STRING}-password \"${DEFAULT_SERVER_PASSWORD}\" "; fi
 SCRIPT_SERVER_NAME="${SERVER_NAME:-'Default Valheim Server'}"
 SCRIPT_WORlD_NAME="${WORLD_NAME:-'DefaultValheimWorld'}"
 
-echo"-------------------------------------------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------------------------------------------"
 echo $ARGUMENT_STRING
-echo"-------------------------------------------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------------------------------------------"
 
 if [ -n "${PUBLIC}" ];
 then
