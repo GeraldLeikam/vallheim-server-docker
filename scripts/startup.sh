@@ -4,6 +4,14 @@ SCRIPT_SERVER_NAME="${SERVER_NAME:-'Default Valheim Server'}"
 SCRIPT_WORlD_NAME="${WORLD_NAME:-'DefaultValheimWorld'}"
 SCRIPT_PUBLIC=1
 
+if [ -n $PUBLIC ];
+then
+  echo "Variable is set"
+else
+  echo "Variable is not set"
+fi
+
+
 if [ $PUBLIC = "true" ];
 then
   SCRIPT_PUBLIC=1
@@ -27,7 +35,7 @@ export SteamAppId=892970
 
 echo "Starting server PRESS CTRL-C to exit"
 
-/valheim-server/server/valheim_server.x86_64 -name "${SCRIPT_SERVER_NAME}" -port 2456 -world "${SCRIPT_WORlD_NAME}" -password "secret" -savedir /valheim-server/save -public 1
+/valheim-server/server/valheim_server.x86_64 -name "${SCRIPT_SERVER_NAME}" -port 2456 -world "${SCRIPT_WORlD_NAME}" -password "secret" -savedir /valheim-server/save -public $SCRIPT_PUBLIC
 export LD_LIBRARY_PATH=$templdpath
 
 while true
