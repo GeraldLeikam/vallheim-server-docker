@@ -41,7 +41,7 @@ then
   echo $SCRIPT_AUTOUPDATE
 fi
 
-if [ $SCRIPT_AUTOUPDATE = "true"];
+if [ $SCRIPT_AUTOUPDATE = "true" ];
 then
   /usr/games/steamcmd +force_install_dir /valheim-server/server +login anonymous +app_update 896660 validate +exit
 fi
