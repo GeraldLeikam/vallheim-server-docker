@@ -6,6 +6,7 @@ RUN apt install -y -q gcc-10-base:i386 libc6:i386 libcrypt1:i386 libgcc-s1:i386 
 libunistring2:i386 glibc-doc:i386 steam:i386 musl libc6 libc-bin libsdl2-2.0-0:i386
 COPY ./apps/steamcmd/ /mnt/
 RUN cp -r /mnt/* /
+RUN /usr/games/steamcmd +exit
 COPY ./scripts/startup.sh /run/startup.sh
 RUN mkdir /valheim-server
 RUN mkdir /valheim-server/server
