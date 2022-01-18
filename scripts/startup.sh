@@ -6,6 +6,6 @@ export SteamAppId=892970
 
 echo "Starting server PRESS CTRL-C to exit"
 
-/valheim-server/valheim_server.x86_64 -name "*** Test Server *** Do not join" -port 2456 -world "*** Test Server *** Do not join" -password "secret"
+/valheim-server/valheim_server.x86_64 -name "Drezael's Test Server *** Do not join" -port 2456 -world "Test Server *** Do not join" -password "secret"
 
 export LD_LIBRARY_PATH=$templdpath
