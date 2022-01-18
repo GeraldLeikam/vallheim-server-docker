@@ -10,8 +10,8 @@ services:
       - 2457:2457/udp
       - 2458:2458/udp
     environment:
-      - SERVER_NAME="Drezaels TestServer"
-      - WORLD_NAME="DrezaelsWorld"
+      - SERVER_NAME=Drezaels TestServer
+      - WORLD_NAME=DrezaelsWorld
     volumes:
       - ./server:/valheim-server/server
       - ./save:/valheim-server/save
