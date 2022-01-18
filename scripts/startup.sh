@@ -2,7 +2,7 @@
 DEBUG=true
 SCRIPT_SERVER_NAME="${SERVER_NAME:-'Default Valheim Server'}"
 SCRIPT_WORlD_NAME="${WORLD_NAME:-'DefaultValheimWorld'}"
-SCRIPT_PUBLIC="${PUBLIC,,}"
+SCRIPT_PUBLIC="$(echo $PUBLIC | tr A-Z a-z)"
 
 
 
