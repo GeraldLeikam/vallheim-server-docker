@@ -1,15 +1,6 @@
 #!/bin/sh
-if [[ -z "${SERVER_NAME}" ]]; then
-  SCRIPT_SERVER_NAME="My Default Valheim Server. Please rename me."
-else
-  SCRIPT_SERVER_NAME="${SERVER_NAME}"
-fi
-
-if [[ -z "${WORLD_NAME}" ]]; then
-  SCRIPT_WORlD_NAME="DefaultGeneratedWorld"
-else
-  SCRIPT_WORLD_NAME="${WORLD_NAME}"
-fi
+SCRIPT_SERVER_NAME="${SERVER_NAME:-'Default Valheim Server'}"
+SCRIPT_WORlD_NAME="${WORLD_NAME:-'DefaultValheimWorld'}"
 
 /usr/games/steamcmd +force_install_dir /valheim-server +login anonymous +app_update 896660 validate +exit
 export templdpath=$LD_LIBRARY_PATH
