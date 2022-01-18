@@ -4,20 +4,21 @@ SCRIPT_SERVER_NAME="${SERVER_NAME:-'Default Valheim Server'}"
 SCRIPT_WORlD_NAME="${WORLD_NAME:-'DefaultValheimWorld'}"
 SCRIPT_PUBLIC=1
 
+
+
 if [ -n "${PUBLIC}" ];
 then
-  echo "Variable is set"
+  if [ $PUBLIC = "true" ];
+  then
+    SCRIPT_PUBLIC=1
+  elif [ $PUBLIC = "false" ];
+  then
+    SCRIPT_PUBLIC=0
+  else
+    SCRIPT_PUBLIC=1
+  fi
 else
-  echo "Variable is not set"
-fi
-
-
-if [ $PUBLIC = "true" ];
-then
   SCRIPT_PUBLIC=1
-elif [ $PUBLIC = "false" ];
-then
-  SCRIPT_PUBLIC=0
 fi
 
 if [ $DEBUG = "true" ];
