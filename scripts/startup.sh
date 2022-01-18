@@ -16,4 +16,4 @@ export LD_LIBRARY_PATH=$templdpath
 
 echo "Starting server PRESS CTRL-C to exit"
 
-/valheim-server/server/valheim_server.x86_64 -name \"$SCRIPT_SERVER_NAME\" -port 2456 -world \"$SCRIPT_WORlD_NAME\" -savedir "/valheim-server/save"
+/valheim-server/server/valheim_server.x86_64 -name "${SCRIPT_SERVER_NAME}" -port 2456 -world "${SCRIPT_WORlD_NAME}" -savedir "/valheim-server/save"
