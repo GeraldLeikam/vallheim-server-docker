@@ -2,16 +2,16 @@
 DEBUG=true
 SCRIPT_SERVER_NAME="${SERVER_NAME:-'Default Valheim Server'}"
 SCRIPT_WORlD_NAME="${WORLD_NAME:-'DefaultValheimWorld'}"
-SCRIPT_PUBLIC=1
+SCRIPT_PUBLIC="${PUBLIC,,}"
 
 
 
 if [ -n "${PUBLIC}" ];
 then
-  if [ echo "${PUBLIC,,}" = "true" ];
+  if [ $SCRIPT_PUBLIC = "true" ];
   then
     SCRIPT_PUBLIC=1
-  elif [ echo "${PUBLIC,,}" = "false" ];
+  elif $SCRIPT_PUBLIC = "false" ];
   then
     SCRIPT_PUBLIC=0
   else
