@@ -1,6 +1,12 @@
 #!/bin/sh
+DEBUG=true
 SCRIPT_SERVER_NAME="${SERVER_NAME:-'Default Valheim Server'}"
 SCRIPT_WORlD_NAME="${WORLD_NAME:-'DefaultValheimWorld'}"
+
+if [ $DEBUG==true ]; then
+  echo $SCRIPT_SERVER_NAME "\n"
+  echo $SCRIPT_WORlD_NAME "\n"
+fi
 
 /usr/games/steamcmd +force_install_dir /valheim-server/server +login anonymous +app_update 896660 validate +exit
 export templdpath=$LD_LIBRARY_PATH
