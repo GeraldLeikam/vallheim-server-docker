@@ -4,7 +4,7 @@ SCRIPT_SERVER_NAME="${SERVER_NAME:-'Default Valheim Server'}"
 SCRIPT_WORlD_NAME="${WORLD_NAME:-'DefaultValheimWorld'}"
 SCRIPT_PUBLIC=1
 
-if [ -n $PUBLIC ];
+if [ -n "${PUBLIC}" ];
 then
   echo "Variable is set"
 else
