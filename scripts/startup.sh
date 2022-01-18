@@ -53,7 +53,7 @@ export SteamAppId=892970
 echo "Starting server PRESS CTRL-C to exit"
 
 ARGUMENTS_STRING="-name ${SCRIPT_SERVER_NAME}"
-echo ARGUMENTS_STRING
+echo $ARGUMENTS_STRING
 
 /valheim-server/server/valheim_server.x86_64 -name "${SCRIPT_SERVER_NAME}" -port 2456 -world "${SCRIPT_WORlD_NAME}" -password "secret" -savedir /valheim-server/save -public $SCRIPT_PUBLIC
 export LD_LIBRARY_PATH=$templdpath
