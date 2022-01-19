@@ -28,7 +28,9 @@ copyBepInExFull ()
 install_mods ()
 {
   MODS={`echo ${MODS} | tr ', ' ' '`}
-  echo "${#MODS[@]}"
+  for MOD in ${#MODS[@]}; do
+    echo $MOD
+  done
 }
 
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
