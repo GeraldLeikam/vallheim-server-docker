@@ -27,7 +27,7 @@ copyBepInExFull ()
 
 install_mods ()
 {
- for ((i=1; i<=9; i++)); do
+ for ((i=1; i<=9; i+1)); do
    echo Hallo Welt: $i;
   done
 }
