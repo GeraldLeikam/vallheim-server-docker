@@ -1,5 +1,5 @@
 #!/bin/sh
-DEBUG=true
+DEBUG=false
 DEFAULT_SERVER_NAME="Default Valheim Server"
 DEFAULT_SERVER_PORT=2456
 DEFAULT_WORLD_NAME="DefaultGeneratedWorld"
@@ -76,7 +76,3 @@ echo "Starting server PRESS CTRL-C to exit"
 export LD_LIBRARY_PATH=$templdpath
 
 while true
-do
-  echo "I am dead. Please kill me"
-  sleep 30
-done
