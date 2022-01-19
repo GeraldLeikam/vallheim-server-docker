@@ -12,10 +12,10 @@ copyVanilla ()
 {
   cp -rv /valheim-server/vanilla-server/* /valheim-server/server
 }
-#copyBepInEx ()
-#{
-#  cp -rv /valheim-server/BepInEx/* /valheim-server/server
-#}
+copyBepInEx ()
+{
+  cp -rv /valheim-server/BepInEx/* /valheim-server/server
+}
 #copyBepInExFull ()
 #{
 #  cp -rv /valheim-server/BepInExFull/* /valheim-server/server
@@ -94,9 +94,10 @@ then
     -savedir $DEFAULT_SAVE_DIR \
     -public $PUBLIC
   export LD_LIBRARY_PATH=$templdpath
-#elif [ "${GAME_MODE}" = "bepinex" ];
-#then
-#  copyVanilla
+elif [ "${GAME_MODE}" = "bepinex" ];
+then
+  copyVanilla
+  copyBepInEx
 #elif [ "${GAME_MODE}" = "bepinexfull" ];
 #then
 #  copyVanilla
