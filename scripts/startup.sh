@@ -31,11 +31,10 @@ copyBepInExFull ()
 install_mods ()
 {
   IFS=', ' read -r -a mods <<< $MODS
-  echo "${mods[0]}"
-  echo "${mods[1]}"
-  #for index in ${!mods[@]}; do
-  #  echo $index
-  #done
+  for mod in $MODS
+  do
+    echo $mod
+  done
 }
 
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
