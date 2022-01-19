@@ -120,14 +120,20 @@ then
   copyVanilla
   copyBepInEx
   copyBepInExFull
-  VALHEIM_INSTALL_DIR="/valheim-server/server"
-  DOORSTOP_DLL="libdoorstop_x64.so"
-  DOORSTOP_DIR="${VALHEIM_INSTALL_DIR}/BepInEx/doorstop"
-  DOORSTOP_INJECT_DLL="${VALHEIM_INSTALL_DIR}/BepInEx/core/BepInEx.Preloader.dll"
-  CORE_DIR="${VALHEIM_INSTALL_DIR}/unstripped_corlib"
+  export DOORSTOP_ENABLE=TRUE
+  export DOORSTOP_INVOKE_DLL_PATH=/valheim-server/server/BepInEx/core/BepInEx.Preloader.dll
+  export DOORSTOP_CORLIB_OVERRIDE_PATH=/valheim-server/server/unstripped_corlib
+  export LD_LIBRARY_PATH="/valheim-server/server/doorstop_libs:$LD_LIBRARY_PATH"
+  export LD_PRELOAD="libdoorstop_x64.so:$LD_PRELOAD"
+  export LD_LIBRARY_PATH="/valheim-server/server/linux64:$LD_LIBRARY_PATH"
   export SteamAppId=892970
-  export LD_LIBRARY_PATH="${VALHEIM_INSTALL_DIR}/linux64/:${LD_LIBRARY_PATH}"
-
+  /valheim-server/server/valheim_server.x86_64 \
+    -name "${SERVER_NAME}" \
+    -port $SERVER_PORT \
+    -world "${WORLD_NAME}" \
+    -password "${SERVER_PASSWORD}" \
+    -savedir $DEFAULT_SAVE_DIR \
+    -public $PUBLIC  
 fi
 while true
 do
