@@ -123,6 +123,8 @@ then
   DOORSTOP_DIR="${VALHEIM_INSTALL_DIR}/BepInEx/doorstop"
   DOORSTOP_INJECT_DLL="${VALHEIM_INSTALL_DIR}/BepInEx/core/BepInEx.Preloader.dll"
   CORE_DIR="${VALHEIM_INSTALL_DIR}/unstripped_corlib"
+  export SteamAppId=892970
+  export LD_LIBRARY_PATH="${VALHEIM_INSTALL_DIR}/linux64/:${LD_LIBRARY_PATH}"
   /valheim-server/server/valheim_server.x86_64 \
     -nographis \
     -batchmode \
@@ -132,8 +134,6 @@ then
     -password "${SERVER_PASSWORD}" \
     -savedir $DEFAULT_SAVE_DIR \
     -public $PUBLIC
-  export SteamAppId=892970
-  export LD_LIBRARY_PATH="${VALHEIM_INSTALL_DIR}/linux64/:${LD_LIBRARY_PATH}"
 fi
 while true
 do
