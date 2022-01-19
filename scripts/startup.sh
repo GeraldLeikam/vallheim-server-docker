@@ -6,7 +6,6 @@ DEFAULT_WORLD_NAME="DefaultGeneratedWorld"
 DEFAULT_SERVER_PASSWORD=secret
 DEFAULT_SAVE_DIR=/valheim-server/save
 DEFAULT_PUBLIC=1
-ARGUMENT_STRING=""
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
 if [ -n "${SERVER_PORT}" ]; then SERVER_PORT=${SERVER_PORT}; else SERVER_PORT=${DEFAULT_SERVER_PORT} ; fi
 if [ -n "${WORLD_NAME}" ]; then WORLD_NAME="${WORLD_NAME}"; else WORLD_NAME="${DEFAULT_WORLD_NAME}"; fi
@@ -75,4 +74,3 @@ echo "Starting server PRESS CTRL-C to exit"
   -public $PUBLIC
 export LD_LIBRARY_PATH=$templdpath
 
-while true
