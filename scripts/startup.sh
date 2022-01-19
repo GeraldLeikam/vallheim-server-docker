@@ -108,7 +108,7 @@ then
   export LD_LIBRARY_PATH="/valheim-server/server/linux64:$LD_LIBRARY_PATH"
   export SteamAppId=892970
   chmod +x /run/mod_installer.sh
-  /run/mod_installer.sh
+  sh /run/mod_installer.sh
   /valheim-server/server/valheim_server.x86_64 \
     -name "${SERVER_NAME}" \
     -port $SERVER_PORT \
