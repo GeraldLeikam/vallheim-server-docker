@@ -61,7 +61,7 @@ export SteamAppId=892970
 
 echo "Starting server PRESS CTRL-C to exit"
 
-/valheim-server/server/valheim_server.x86_64 -name "${SERVER_NAME}" -port 2456 -world "DrezaelsWorld" -password "secret""
+/valheim-server/server/valheim_server.x86_64 -name "${SERVER_NAME}" -port 2456 -world "DrezaelsWorld" -password "secret"
 export LD_LIBRARY_PATH=$templdpath
 
 while true
