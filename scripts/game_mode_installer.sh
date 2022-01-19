@@ -8,6 +8,6 @@ rm -r /tmp/BepInEx
 
 wget -v https://valheim.thunderstore.io/package/download/1F31A/BepInEx_Valheim_Full_Updater/1.0.2/ -O /tmp/1F31A-BepInEx_Valheim_Full_Updater-1.0.2.zip
 unzip /tmp/1F31A-BepInEx_Valheim_Full_Updater-1.0.2.zip -d /tmp/BepInEx
-#cp -r /tmp/BepInEx/BepInEx_Valheim_Full/* /valheim-server/BepInExFull
-#rm -v /tmp/1F31A-BepInEx_Valheim_Full_Updater-1.0.2.zip
-#rm -r /tmp/BepInEx
+cp -r /tmp/BepInEx/BepInEx_Valheim_Full_Updater/* /valheim-server/BepInExFull
+rm -v /tmp/1F31A-BepInEx_Valheim_Full_Updater-1.0.2.zip
+rm -r /tmp/BepInEx
