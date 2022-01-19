@@ -27,7 +27,7 @@ copyBepInExFull ()
 
 install_mods ()
 {
-
+  IFS=', ' read -r -a array <<< "$MODS"
   for element in "${array[@]}"
   do
       echo "$element"
