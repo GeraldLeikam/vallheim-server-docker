@@ -10,7 +10,7 @@ services:
       - 2457:2457/udp
       - 2458:2458/udp
     environment:
-      - SERVER_NAME=Drezaels Default TestServer
+      - SERVER_NAME=Drezaels TestServer
       - WORLD_NAME=DrezaelsWorld
       - PUBLIC=true
       - AUTOUPDATE=false

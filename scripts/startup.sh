@@ -46,6 +46,8 @@ fi
 
 if [ $DEBUG = "true" ];
 then
+  echo "SERVER_NAME -> ${SERVER_NAME}"
+  echo "SERVER_PASSWORD -> ${SERVER_PASSWORD}"
   echo "AUTOUPDATE -> ${SCRIPT_AUTOUPDATE}"
   echo $ARGUMENT_STRING
 fi
@@ -65,7 +67,7 @@ echo "Starting server PRESS CTRL-C to exit"
   -name "${SERVER_NAME}" \
   -port 2456 \
   -world "DrezaelsWorld" \
-  -password "secret"
+  -password "${SERVER_PASSWORD}"
 export LD_LIBRARY_PATH=$templdpath
 
 while true
