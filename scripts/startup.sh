@@ -7,6 +7,12 @@ DEFAULT_SERVER_PASSWORD=secret
 DEFAULT_SAVE_DIR=/valheim-server/save
 DEFAULT_PUBLIC=1
 DEFAULT_GAME_MODE=vanilla
+
+copyVanilla ()
+{
+  cp -rv /valheim-server/vanilla-server/* /valheim-server/server
+}
+
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
 if [ -n "${SERVER_PORT}" ]; then SERVER_PORT=${SERVER_PORT}; else SERVER_PORT=${DEFAULT_SERVER_PORT} ; fi
 if [ -n "${WORLD_NAME}" ]; then WORLD_NAME="${WORLD_NAME}"; else WORLD_NAME="${DEFAULT_WORLD_NAME}"; fi
@@ -62,7 +68,8 @@ then
 fi
 if [ "${GAME_MODE}" = "vanilla" ];
 then
-  cp -rv /valheim-server/vanilla-server/* /valheim-server/server
+  copyVanilla
+  #cp -rv /valheim-server/vanilla-server/* /valheim-server/server
   export templdpath=$LD_LIBRARY_PATH
   export LD_LIBRARY_PATH=/valheim-server/server/linux64:$LD_LIBRARY_PATH
   export SteamAppId=892970
