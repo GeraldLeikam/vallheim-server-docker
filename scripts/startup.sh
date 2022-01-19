@@ -27,7 +27,7 @@ copyBepInExFull ()
 
 install_mods ()
 {
-  MODS=(`echo ${MODS} | tr ', ' ' '`)
+  MODS={`echo ${MODS} | tr ', ' ' '`}
   echo "${#MODS[@]}"
 }
 
