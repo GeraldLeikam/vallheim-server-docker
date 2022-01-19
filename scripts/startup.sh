@@ -33,7 +33,7 @@ install_mods ()
   IFS=', ' read -r -a mods <<< $MODS
   for mod in $MODS
   do
-    echo $mod
+    echo "mod -> ${mod}"
   done
 }
 
