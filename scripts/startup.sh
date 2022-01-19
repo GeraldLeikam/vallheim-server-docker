@@ -8,6 +8,10 @@ DEFAULT_SAVE_DIR=/valheim-server/save
 DEFAULT_PUBLIC=1
 DEFAULT_GAME_MODE=vanilla
 
+declare -a mods
+mods=("mod1" "mod2")
+
+
 copyVanilla ()
 {
   echo "Copy vanilla server files"
@@ -27,8 +31,6 @@ copyBepInExFull ()
 
 install_mods ()
 {
-  declare -a mods
-  mods=("mod1" "mod2")
   echo "${mods[0]}"
   echo "${mods[1]}"
   #for index in ${!mods[@]}; do
