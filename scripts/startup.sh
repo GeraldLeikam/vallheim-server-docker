@@ -117,7 +117,7 @@ elif [ "${GAME_MODE}" = "bepinexfull" ];
 then
   echo "Starting 'bepinexfull' server PRESS CTRL-C to exit"
   copyVanilla
-  copyBepInExFull
+  #copyBepInExFull
   VALHEIM_INSTALL_DIR="/valheim-server/server"
   DOORSTOP_DLL="libdoorstop_x64.so"
   DOORSTOP_DIR="${VALHEIM_INSTALL_DIR}/BepInEx/doorstop"
