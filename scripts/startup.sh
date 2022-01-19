@@ -21,7 +21,8 @@ copyBepInEx ()
 copyBepInExFull ()
 {
   echo "Copy bepinexfull mode files"
-  cp -r /valheim-server/BepInExFull/* /valheim-server/server
+  mkdir /valheim-server/server/BepInEx/plugins/1F31A-BepInEx_Valheim_Full_Updater
+  cp -r /valheim-server/BepInExFull/* /valheim-server/server/BepInEx/plugins/1F31A-BepInEx_Valheim_Full_Updater
 }
 
 
@@ -117,7 +118,8 @@ elif [ "${GAME_MODE}" = "bepinexfull" ];
 then
   echo "Starting 'bepinexfull' server PRESS CTRL-C to exit"
   copyVanilla
-  #copyBepInExFull
+  copyBepInEx
+  copyBepInExFull
   VALHEIM_INSTALL_DIR="/valheim-server/server"
   DOORSTOP_DLL="libdoorstop_x64.so"
   DOORSTOP_DIR="${VALHEIM_INSTALL_DIR}/BepInEx/doorstop"
