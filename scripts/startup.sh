@@ -118,6 +118,22 @@ then
   echo "Starting 'bepinexfull' server PRESS CTRL-C to exit"
   copyVanilla
   copyBepInExFull
+  VALHEIM_INSTALL_DIR="/valheim-server/server"
+  DOORSTOP_DLL="libdoorstop_x64.so"
+  DOORSTOP_DIR="${VALHEIM_INSTALL_DIR}/BepInEx/doorstop"
+  DOORSTOP_INJECT_DLL="${VALHEIM_INSTALL_DIR}/BepInEx/core/BepInEx.Preloader.dll"
+  CORE_DIR="${VALHEIM_INSTALL_DIR}/unstripped_corlib"
+  /valheim-server/server/valheim_server.x86_64 \
+    -nographis \
+    -batchmode \
+    -name "${SERVER_NAME}" \
+    -port $SERVER_PORT \
+    -world "${WORLD_NAME}" \
+    -password "${SERVER_PASSWORD}" \
+    -savedir $DEFAULT_SAVE_DIR \
+    -public $PUBLIC
+  export SteamAppId=892970
+  export LD_LIBRARY_PATH="${VALHEIM_INSTALL_DIR}/linux64/:${LD_LIBRARY_PATH}"
 fi
 while true
 do
