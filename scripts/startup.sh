@@ -27,9 +27,9 @@ copyBepInExFull ()
 
 install_mods ()
 {
-  for MOD in $MODS
-  do
-    echo $MOD
+  END=2
+  for ((i=1;i<=END;i++)); do
+      echo $i
   done
 }
 
