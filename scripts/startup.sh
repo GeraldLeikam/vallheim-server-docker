@@ -30,6 +30,7 @@ copyBepInExFull ()
 
 install_mods ()
 {
+  mods=$MODS
   echo "${mods[0]}"
   echo "${mods[1]}"
   #for index in ${!mods[@]}; do
