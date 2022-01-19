@@ -14,6 +14,5 @@ services:
       - WORLD_NAME=DrezaelsWorld
       - PUBLIC=true
       - AUTOUPDATE=false
-      - GAME_MODE=vanilla
       - ./server:/valheim-server/server
       - ./save:/valheim-server/save
