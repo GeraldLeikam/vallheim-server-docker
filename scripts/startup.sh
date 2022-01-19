@@ -30,10 +30,13 @@ copyBepInExFull ()
 
 install_mods ()
 {
+  echo "Installing mods"
   IFS=', ' read -r -a mods <<< $MODS
   for mod in $MODS
   do
-    echo "mod -> ${mod}"
+    echo "installing mod -> ${mod}"
+    filename=($(echo $mod | tr "/" "\n"))
+    echo $filename
   done
 }
 
