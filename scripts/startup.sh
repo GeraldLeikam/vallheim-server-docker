@@ -10,7 +10,7 @@ ARGUMENT_STRING=""
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
 if [ -n "${SERVER_PORT}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-port ${SERVER_PORT} "; else ARGUMENT_STRING="${ARGUMENT_STRING}-port ${DEFAULT_SERVER_PORT} "; fi
 if [ -n "${WORLD_NAME}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-world \"${WORLD_NAME}\" "; else ARGUMENT_STRING="${ARGUMENT_STRING}-world \"${DEFAULT_WORLD_NAME}\" "; fi
-#if [ -n "${SERVER_PASSWORD}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-password ${SERVER_PASSWORD} "; else ARGUMENT_STRING="${ARGUMENT_STRING}-password \"secret\" "; fi
+if [ -n "${SERVER_PASSWORD}" ]; then SERVER_PASSWORD="${SERVER_PASSWORD}"; else SERVER_PASSWORD="${DEFAULT_SERVER_PASSWORD}"; fi
 ARGUMENT_STRING="${ARGUMENT_STRING}-savedir ${DEFAULT_SAVE_DIR} "
 
 if [ -n "${PUBLIC}" ];
@@ -61,7 +61,11 @@ export SteamAppId=892970
 
 echo "Starting server PRESS CTRL-C to exit"
 
-/valheim-server/server/valheim_server.x86_64 -name "${SERVER_NAME}" -port 2456 -world "DrezaelsWorld" -password "secret"
+/valheim-server/server/valheim_server.x86_64 \
+  -name "${SERVER_NAME}" \
+  -port 2456 \
+  -world "DrezaelsWorld" \
+  -password "secret"
 export LD_LIBRARY_PATH=$templdpath
 
 while true
