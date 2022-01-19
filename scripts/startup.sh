@@ -27,12 +27,7 @@ copyBepInExFull ()
 
 install_mods ()
 {
-  i=1
-  while [ $i -lt 10 ];
-  do
-    echo Hallo Welt: $i
-    i=$i+1;
-  done
+ for ((i=1;i<=9;i++)); do echo Hallo Welt: $i; done
 }
 
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
