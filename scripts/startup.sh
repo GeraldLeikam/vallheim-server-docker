@@ -10,11 +10,13 @@ DEFAULT_GAME_MODE=vanilla
 
 copyVanilla ()
 {
-  cp -rv /valheim-server/vanilla-server/* /valheim-server/server
+  echo "Copy vanilla server files"
+  cp -r /valheim-server/vanilla-server/* /valheim-server/server
 }
 copyBepInEx ()
 {
-  cp -rv /valheim-server/BepInEx/* /valheim-server/server
+  echo "Copy bepinex mode files"
+  cp -r /valheim-server/BepInEx/* /valheim-server/server
 }
 #copyBepInExFull ()
 #{
@@ -78,13 +80,14 @@ then
 fi
 if [ "${GAME_MODE}" = "vanilla" ];
 then
+  echo "Starting 'vanilla' server PRESS CTRL-C to exit"
   copyVanilla
   #cp -rv /valheim-server/vanilla-server/* /valheim-server/server/
   export templdpath=$LD_LIBRARY_PATH
   export LD_LIBRARY_PATH=/valheim-server/server/linux64:$LD_LIBRARY_PATH
   export SteamAppId=892970
 
-  echo "Starting 'vanilla' server PRESS CTRL-C to exit"
+
 
   /valheim-server/server/valheim_server.x86_64 \
     -name "${SERVER_NAME}" \
@@ -96,6 +99,7 @@ then
   export LD_LIBRARY_PATH=$templdpath
 elif [ "${GAME_MODE}" = "bepinex" ];
 then
+  echo "Starting 'bepinex' server PRESS CTRL-C to exit"
   copyVanilla
   copyBepInEx
 #elif [ "${GAME_MODE}" = "bepinexfull" ];
