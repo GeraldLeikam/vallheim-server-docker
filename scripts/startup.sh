@@ -18,10 +18,11 @@ copyBepInEx ()
   echo "Copy bepinex mode files"
   cp -r /valheim-server/BepInEx/* /valheim-server/server
 }
-#copyBepInExFull ()
-#{
-#  cp -rv /valheim-server/BepInExFull/* /valheim-server/server
-#}
+copyBepInExFull ()
+{
+  echo "Copy bepinexfull mode files"
+  cp -r /valheim-server/BepInExFull/* /valheim-server/server
+}
 
 
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
@@ -112,9 +113,11 @@ then
     -password "${SERVER_PASSWORD}" \
     -savedir $DEFAULT_SAVE_DIR \
     -public $PUBLIC
-#elif [ "${GAME_MODE}" = "bepinexfull" ];
-#then
-#  copyVanilla
+elif [ "${GAME_MODE}" = "bepinexfull" ];
+then
+  echo "Starting 'bepinexfull' server PRESS CTRL-C to exit"
+  copyVanilla
+  copyBepInExFull
 fi
 while true
 do
