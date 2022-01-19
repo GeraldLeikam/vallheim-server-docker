@@ -15,10 +15,10 @@ services:
       - PUBLIC=true
       - AUTOUPDATE=false
       - GAME_MODE=bepinex
-      - MODS=
+      - MODS=(
           https://gcdn.thunderstore.io/live/repository/packages/Zinal001-Server_Messages-1.0.1.zip
           https://gcdn.thunderstore.io/live/repository/packages/ValheimAddicts-Compass_By_Aedenthorn-0.8.2.zip
-
+          )
     volumes:
       - ./server:/valheim-server/server
       - ./save:/valheim-server/save
