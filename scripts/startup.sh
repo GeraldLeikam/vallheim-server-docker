@@ -25,6 +25,10 @@ copyBepInExFull ()
   cp -r /valheim-server/BepInExFull/plugins/* /valheim-server/server/BepInEx/plugins/1F31A-BepInEx_Valheim_Full_Updater
 }
 
+install_mods ()
+{
+  echo $MODS
+}
 
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
 if [ -n "${SERVER_PORT}" ]; then SERVER_PORT=${SERVER_PORT}; else SERVER_PORT=${DEFAULT_SERVER_PORT} ; fi
@@ -107,8 +111,7 @@ then
   export LD_PRELOAD="libdoorstop_x64.so:$LD_PRELOAD"
   export LD_LIBRARY_PATH="/valheim-server/server/linux64:$LD_LIBRARY_PATH"
   export SteamAppId=892970
-  chmod +x /run/mod_installer.sh
-  sh /run/mod_installer.sh
+  install_mods
   /valheim-server/server/valheim_server.x86_64 \
     -name "${SERVER_NAME}" \
     -port $SERVER_PORT \
