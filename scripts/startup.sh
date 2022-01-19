@@ -12,14 +12,14 @@ copyVanilla ()
 {
   cp -rv /valheim-server/vanilla-server/* /valheim-server/server
 }
-copyBepInEx ()
-{
-  cp -rv /valheim-server/BepInEx/* /valheim-server/server
-}
-copyBepInExFull ()
-{
-  cp -rv /valheim-server/BepInExFull/* /valheim-server/server
-}
+#copyBepInEx ()
+#{
+#  cp -rv /valheim-server/BepInEx/* /valheim-server/server
+#}
+#copyBepInExFull ()
+#{
+#  cp -rv /valheim-server/BepInExFull/* /valheim-server/server
+#}
 
 
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
@@ -67,6 +67,7 @@ then
   echo "SERVER_PASSWORD -> ${SERVER_PASSWORD}"
   echo "SAVE_DIR -> ${DEFAULT_SAVE_DIR}"
   echo "PUBLIC -> ${PUBLIC}"
+  echo "GAME_MODE -> ${GAME_MODE}"
   echo "AUTOUPDATE -> ${SCRIPT_AUTOUPDATE}"
   echo $ARGUMENT_STRING
 fi
@@ -93,12 +94,12 @@ then
     -savedir $DEFAULT_SAVE_DIR \
     -public $PUBLIC
   export LD_LIBRARY_PATH=$templdpath
-elif [ "${GAME_MODE}" = "bepinex" ];
-then
-  copyVanilla
-elif [ "${GAME_MODE}" = "bepinexfull" ];
-then
-  copyVanilla
+#elif [ "${GAME_MODE}" = "bepinex" ];
+#then
+#  copyVanilla
+#elif [ "${GAME_MODE}" = "bepinexfull" ];
+#then
+#  copyVanilla
 fi
 while true
 do
