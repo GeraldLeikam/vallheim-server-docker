@@ -8,10 +8,10 @@ DEFAULT_SAVE_DIR=/valheim-server/save
 DEFAULT_PUBLIC=1
 DEFAULT_GAME_MODE=vanilla
 
-#copyVanilla ()
-#{
-#  cp -rv /valheim-server/vanilla-server/* /valheim-server/server
-#  }
+copyVanilla ()
+{
+  cp -rv /valheim-server/vanilla-server/* /valheim-server/server
+}
 #copyBepInEx ()
 #{
 #  cp -rv /valheim-server/BepInEx/* /valheim-server/server
@@ -78,7 +78,7 @@ then
 fi
 if [ "${GAME_MODE}" = "vanilla" ];
 then
-  #copyVanilla
+  copyVanilla
   #cp -rv /valheim-server/vanilla-server/* /valheim-server/server/
   export templdpath=$LD_LIBRARY_PATH
   export LD_LIBRARY_PATH=/valheim-server/server/linux64:$LD_LIBRARY_PATH
