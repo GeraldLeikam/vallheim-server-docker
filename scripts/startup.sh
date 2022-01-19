@@ -27,12 +27,8 @@ copyBepInExFull ()
 
 install_mods ()
 {
-  IFS=', ' read -r -a array <<< "$MODS"
-  for element in "${array[@]}"
-  do
-      echo "$element"
-  done
-
+  MODS=(`echo $MODS | tr ', ' ' '`)
+  echo "${#MODS[@]}"
 }
 
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
