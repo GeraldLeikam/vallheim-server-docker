@@ -114,26 +114,6 @@ then
     -password "${SERVER_PASSWORD}" \
     -savedir $DEFAULT_SAVE_DIR \
     -public $PUBLIC
-elif [ "${GAME_MODE}" = "bepinexfull" ];
-then
-  echo "Starting 'bepinexfull' server PRESS CTRL-C to exit"
-  copyVanilla
-  copyBepInEx
-  copyBepInExFull
-  export DOORSTOP_ENABLE=TRUE
-  export DOORSTOP_INVOKE_DLL_PATH=/valheim-server/server/BepInEx/core/BepInEx.Preloader.dll
-  export DOORSTOP_CORLIB_OVERRIDE_PATH=/valheim-server/server/unstripped_corlib
-  export LD_LIBRARY_PATH="/valheim-server/server/doorstop_libs:$LD_LIBRARY_PATH"
-  export LD_PRELOAD="libdoorstop_x64.so:$LD_PRELOAD"
-  export LD_LIBRARY_PATH="/valheim-server/server/linux64:$LD_LIBRARY_PATH"
-  export SteamAppId=892970
-  /valheim-server/server/valheim_server.x86_64 \
-    -name "${SERVER_NAME}" \
-    -port $SERVER_PORT \
-    -world "${WORLD_NAME}" \
-    -password "${SERVER_PASSWORD}" \
-    -savedir $DEFAULT_SAVE_DIR \
-    -public $PUBLIC  
 fi
 while true
 do
