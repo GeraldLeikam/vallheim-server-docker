@@ -8,8 +8,8 @@ DEFAULT_SAVE_DIR=/valheim-server/save
 DEFAULT_PUBLIC=1
 ARGUMENT_STRING=""
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
-if [ -n "${SERVER_PORT}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-port ${SERVER_PORT} "; else ARGUMENT_STRING="${ARGUMENT_STRING}-port ${DEFAULT_SERVER_PORT} "; fi
-if [ -n "${WORLD_NAME}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-world \"${WORLD_NAME}\" "; else ARGUMENT_STRING="${ARGUMENT_STRING}-world \"${DEFAULT_WORLD_NAME}\" "; fi
+if [ -n "${SERVER_PORT}" ]; then SERVER_PORT=${SERVER_PORT}; else SERVER_PORT=${DEFAULT_SERVER_PORT} ; fi
+if [ -n "${WORLD_NAME}" ]; then WORLD_NAME="${WORLD_NAME}"; else WORLD_NAME="${DEFAULT_WORLD_NAME}"; fi
 if [ -n "${SERVER_PASSWORD}" ]; then SERVER_PASSWORD="${SERVER_PASSWORD}"; else SERVER_PASSWORD="${DEFAULT_SERVER_PASSWORD}"; fi
 ARGUMENT_STRING="${ARGUMENT_STRING}-savedir ${DEFAULT_SAVE_DIR} "
 
@@ -47,6 +47,8 @@ fi
 if [ $DEBUG = "true" ];
 then
   echo "SERVER_NAME -> ${SERVER_NAME}"
+  echo "SERVER_PORT -> ${SERVER_PORT}"
+  echo "WORLD_NAME -> ${WORLD_NAME}"
   echo "SERVER_PASSWORD -> ${SERVER_PASSWORD}"
   echo "AUTOUPDATE -> ${SCRIPT_AUTOUPDATE}"
   echo $ARGUMENT_STRING
@@ -65,8 +67,8 @@ echo "Starting server PRESS CTRL-C to exit"
 
 /valheim-server/server/valheim_server.x86_64 \
   -name "${SERVER_NAME}" \
-  -port 2456 \
-  -world "DrezaelsWorld" \
+  -port $SERVER_PORT \
+  -world "${WORLD_NAME}" \
   -password "${SERVER_PASSWORD}"
 export LD_LIBRARY_PATH=$templdpath
 
