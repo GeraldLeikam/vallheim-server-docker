@@ -10,7 +10,7 @@ ARGUMENT_STRING=""
 if [ -n "${SERVER_NAME}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-name \"${SERVER_NAME}\" "; else ARGUMENT_STRING="${ARGUMENT_STRING}-name \"${DEFAULT_SERVER_NAME}\" "; fi
 if [ -n "${SERVER_PORT}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-port ${SERVER_PORT} "; else ARGUMENT_STRING="${ARGUMENT_STRING}-port ${DEFAULT_SERVER_PORT} "; fi
 if [ -n "${WORLD_NAME}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-world \"${WORLD_NAME}\" "; else ARGUMENT_STRING="${ARGUMENT_STRING}-world \"${DEFAULT_WORLD_NAME}\" "; fi
-if [ -n "${SERVER_PASSWORD}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-password ${SERVER_PASSWORD} "; else ARGUMENT_STRING="${ARGUMENT_STRING}-password \"secret\" "; fi
+#if [ -n "${SERVER_PASSWORD}" ]; then ARGUMENT_STRING="${ARGUMENT_STRING}-password ${SERVER_PASSWORD} "; else ARGUMENT_STRING="${ARGUMENT_STRING}-password \"secret\" "; fi
 ARGUMENT_STRING="${ARGUMENT_STRING}-savedir ${DEFAULT_SAVE_DIR} "
 
 if [ -n "${PUBLIC}" ];
@@ -43,6 +43,8 @@ else
   SCRIPT_AUTOUPDATE="false"
 fi
 
+ARGUMENT_STRING="${ARGUMENT_STRING}-password secret "
+
 if [ $DEBUG = "true" ];
 then
   echo "AUTOUPDATE -> ${SCRIPT_AUTOUPDATE}"
@@ -65,6 +67,6 @@ export LD_LIBRARY_PATH=$templdpath
 
 while true
 do
-  echo "I'am dead. Please kill me"
+  echo "I am dead. Please kill me"
   sleep 30
 done
