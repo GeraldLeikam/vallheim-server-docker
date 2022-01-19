@@ -61,7 +61,7 @@ export SteamAppId=892970
 
 echo "Starting server PRESS CTRL-C to exit"
 
-/valheim-server/server/valheim_server.x86_64 -password" \"secret\" ${ARGUMENT_STRING}"
+/valheim-server/server/valheim_server.x86_64 -password "secret"" ${ARGUMENT_STRING}"
 export LD_LIBRARY_PATH=$templdpath
 
 while true
