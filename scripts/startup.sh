@@ -11,21 +11,20 @@ if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=
 if [ -n "${SERVER_PORT}" ]; then SERVER_PORT=${SERVER_PORT}; else SERVER_PORT=${DEFAULT_SERVER_PORT} ; fi
 if [ -n "${WORLD_NAME}" ]; then WORLD_NAME="${WORLD_NAME}"; else WORLD_NAME="${DEFAULT_WORLD_NAME}"; fi
 if [ -n "${SERVER_PASSWORD}" ]; then SERVER_PASSWORD="${SERVER_PASSWORD}"; else SERVER_PASSWORD="${DEFAULT_SERVER_PASSWORD}"; fi
-ARGUMENT_STRING="${ARGUMENT_STRING}-savedir ${DEFAULT_SAVE_DIR} "
 
 if [ -n "${PUBLIC}" ];
 then
   if [ "$(echo $PUBLIC | tr A-Z a-z)" = "true" ];
   then
-    ARGUMENT_STRING="${ARGUMENT_STRING}-public 1 "
+    PUBLIC=1
   elif [ "$(echo $PUBLIC | tr A-Z a-z)" = "false" ];
   then
-    ARGUMENT_STRING="${ARGUMENT_STRING}-public 0 "
+    PUBLIC=0
   else
-    ARGUMENT_STRING="${ARGUMENT_STRING}-public ${DEFAULT_PUBLIC} "
+    PUBLIC=${DEFAULT_PUBLIC}
   fi
 else
-  ARGUMENT_STRING="${ARGUMENT_STRING}-public ${DEFAULT_PUBLIC} "
+  PUBLIC=${DEFAULT_PUBLIC}
 fi
 
 if [ -n "${AUTOUPDATE}" ];
@@ -50,6 +49,8 @@ then
   echo "SERVER_PORT -> ${SERVER_PORT}"
   echo "WORLD_NAME -> ${WORLD_NAME}"
   echo "SERVER_PASSWORD -> ${SERVER_PASSWORD}"
+  echo "SAVE_DIR -> ${DEFAULT_SAVE_DIR}"
+  echo "PUBLIC -> ${PUBLIC}"
   echo "AUTOUPDATE -> ${SCRIPT_AUTOUPDATE}"
   echo $ARGUMENT_STRING
 fi
@@ -69,7 +70,9 @@ echo "Starting server PRESS CTRL-C to exit"
   -name "${SERVER_NAME}" \
   -port $SERVER_PORT \
   -world "${WORLD_NAME}" \
-  -password "${SERVER_PASSWORD}"
+  -password "${SERVER_PASSWORD}" \
+  -savedir $DEFAULT_SAVE_DIR \
+  -public $PUBLIC
 export LD_LIBRARY_PATH=$templdpath
 
 while true
