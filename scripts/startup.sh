@@ -27,10 +27,12 @@ copyBepInExFull ()
 
 install_mods ()
 {
-  MODS={`echo ${MODS} | tr ', ' ' '`}
-  for index in ${!MODS[@]}; do
-    echo $index
-  done
+  mods={`echo ${MODS} | tr ', ' ' '`}
+  echo "${mods[0]}"
+  echo "${mods[1]}"
+  #for index in ${!mods[@]}; do
+  #  echo $index
+  #done
 }
 
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
