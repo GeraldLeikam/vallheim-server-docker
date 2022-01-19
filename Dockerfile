@@ -9,11 +9,11 @@ COPY ./apps/steamcmd/ /tmp/steamcmd
 RUN cp -r /tmp/steamcmd/* / && rm -r /tmp/steamcmd
 RUN /usr/games/steamcmd +force_install_dir /valheim-server/vanilla-server +login anonymous +app_update 896660 validate +exit
 RUN mkdir -v /valheim-server/save /valheim-server/server /valheim-server/BepInEx
-COPY ./scripts/game_mode_installer.sh /run/game_mode_installer.sh
+
+RUN wget -v https://valheim.thunderstore.io/package/download/denikson/BepInExPack_Valheim/5.4.1700/ -O /tmp/denikson-BepInExPack_Valheim-5.4.1700.zip \
+&& unzip /tmp/denikson-BepInExPack_Valheim-5.4.1700.zip -d /tmp/BepInEx && cp -r /tmp/BepInEx/BepInExPack_Valheim/* /valheim-server/BepInEx \
+&& rm /tmp/denikson-BepInExPack_Valheim-5.4.1700.zip && rm -r /tmp/BepInEx \
+
 COPY ./scripts/startup.sh /run/startup.sh
-COPY ./scripts/mod_installer.sh /run/mod_installer.sh
-RUN chmod +x /run/game_mode_installer.sh
 RUN chmod +x /run/startup.sh
-RUN chmod +X /run/mod_installer.sh
-RUN /run/game_mode_installer.sh
 CMD /run/startup.sh
