@@ -22,7 +22,7 @@ copyBepInExFull ()
 {
   echo "Copy bepinexfull mode files"
   mkdir /valheim-server/server/BepInEx/plugins/1F31A-BepInEx_Valheim_Full_Updater
-  cp -r /valheim-server/BepInExFull/* /valheim-server/server/BepInEx/plugins/1F31A-BepInEx_Valheim_Full_Updater
+  cp -r /valheim-server/BepInExFull/plugins/* /valheim-server/server/BepInEx/plugins/1F31A-BepInEx_Valheim_Full_Updater
 }
 
 
