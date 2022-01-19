@@ -15,7 +15,9 @@ RUN mkdir /valheim-server/BepInEx
 RUN mkdir /valheim-server/BepInExFull
 COPY ./scripts/game_mode_installer.sh /run/game_mode_installer.sh
 COPY ./scripts/startup.sh /run/startup.sh
+COPY ./scripts/mod_installer.sh /run/mod_installer.sh
 RUN chmod +x /run/game_mode_installer.sh
 RUN chmod +x /run/startup.sh
+RUN chmod +X /run/mod_installer.sh
 RUN /run/game_mode_installer.sh
 CMD /run/startup.sh

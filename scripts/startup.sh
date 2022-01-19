@@ -107,6 +107,7 @@ then
   export LD_PRELOAD="libdoorstop_x64.so:$LD_PRELOAD"
   export LD_LIBRARY_PATH="/valheim-server/server/linux64:$LD_LIBRARY_PATH"
   export SteamAppId=892970
+  /run/mod_installer.sh
   /valheim-server/server/valheim_server.x86_64 \
     -name "${SERVER_NAME}" \
     -port $SERVER_PORT \
