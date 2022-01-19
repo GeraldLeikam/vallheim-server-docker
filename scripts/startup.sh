@@ -74,3 +74,8 @@ echo "Starting server PRESS CTRL-C to exit"
   -public $PUBLIC
 export LD_LIBRARY_PATH=$templdpath
 
+while true
+do
+  echo "I am dead. Please kill me"
+  sleep 30
+done
