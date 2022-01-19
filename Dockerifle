@@ -9,6 +9,7 @@ COPY ./apps/steamcmd/ /mnt/
 RUN cp -r /mnt/* /
 RUN /usr/games/steamcmd +force_install_dir /valheim-server/vanilla-server +login anonymous +app_update 896660 validate +exit
 RUN mkdir /valheim-server/BepInEx
+RUN mkdir /valheim-server/BepInExFull
 COPY ./scripts/game_mode_installer.sh /run/game_mode_installer.sh
 RUN chmod +x /run/game_mode_installer.sh
 RUN /run/game_mode_installer.sh
