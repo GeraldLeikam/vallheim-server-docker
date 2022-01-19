@@ -31,7 +31,7 @@ install_mods ()
   while [ $i -lt 10 ];
   do
     echo Hallo Welt: $i
-    i=$[$i+1];
+    i=$i+1;
   done
 }
 
