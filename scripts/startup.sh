@@ -77,7 +77,7 @@ then
     -savedir $DEFAULT_SAVE_DIR \
     -public $PUBLIC
   export LD_LIBRARY_PATH=$templdpath
-
+fi
 while true
 do
   echo "I am dead. Please kill me"
