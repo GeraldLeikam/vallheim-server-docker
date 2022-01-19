@@ -125,15 +125,7 @@ then
   CORE_DIR="${VALHEIM_INSTALL_DIR}/unstripped_corlib"
   export SteamAppId=892970
   export LD_LIBRARY_PATH="${VALHEIM_INSTALL_DIR}/linux64/:${LD_LIBRARY_PATH}"
-  /valheim-server/server/valheim_server.x86_64 \
-    -nographis \
-    -batchmode \
-    -name "${SERVER_NAME}" \
-    -port $SERVER_PORT \
-    -world "${WORLD_NAME}" \
-    -password "${SERVER_PASSWORD}" \
-    -savedir $DEFAULT_SAVE_DIR \
-    -public $PUBLIC
+
 fi
 while true
 do
