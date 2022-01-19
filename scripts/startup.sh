@@ -96,11 +96,9 @@ then
 elif [ "${GAME_MODE}" = "bepinex" ];
 then
   copyVanilla
-  copyBepInEx
 elif [ "${GAME_MODE}" = "bepinexfull" ];
 then
   copyVanilla
-  copyBepInExFull
 fi
 while true
 do
