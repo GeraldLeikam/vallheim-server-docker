@@ -6,10 +6,12 @@ DEFAULT_WORLD_NAME="DefaultGeneratedWorld"
 DEFAULT_SERVER_PASSWORD=secret
 DEFAULT_SAVE_DIR=/valheim-server/save
 DEFAULT_PUBLIC=1
+DEFAULT_GAME_MODE=vanilla
 if [ -n "${SERVER_NAME}" ]; then SERVER_NAME="${SERVER_NAME}"; else SERVER_NAME=${DEFAULT_SERVER_NAME}; fi
 if [ -n "${SERVER_PORT}" ]; then SERVER_PORT=${SERVER_PORT}; else SERVER_PORT=${DEFAULT_SERVER_PORT} ; fi
 if [ -n "${WORLD_NAME}" ]; then WORLD_NAME="${WORLD_NAME}"; else WORLD_NAME="${DEFAULT_WORLD_NAME}"; fi
 if [ -n "${SERVER_PASSWORD}" ]; then SERVER_PASSWORD="${SERVER_PASSWORD}"; else SERVER_PASSWORD="${DEFAULT_SERVER_PASSWORD}"; fi
+if [ -n "${GAME_MODE}" ]; then GAME_MODE="${GAME_MODE}"; else GAME_MODE=${DEFAULT_GAME_MODE}; fi
 
 if [ -n "${PUBLIC}" ];
 then
@@ -58,21 +60,23 @@ if [ $SCRIPT_AUTOUPDATE = "true" ];
 then
   /usr/games/steamcmd +force_install_dir /valheim-server/server +login anonymous +app_update 896660 validate +exit
 fi
+if [ "${GAME_MODE}" = "vanilla" ];
+then
+  cp -rv /valheim-server/server-vanilla/* /valheim-server/server
+  export templdpath=$LD_LIBRARY_PATH
+  export LD_LIBRARY_PATH=/valheim-server/server/linux64:$LD_LIBRARY_PATH
+  export SteamAppId=892970
 
-export templdpath=$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/valheim-server/server/linux64:$LD_LIBRARY_PATH
-export SteamAppId=892970
+  echo "Starting 'vanilla' server PRESS CTRL-C to exit"
 
-echo "Starting server PRESS CTRL-C to exit"
-
-/valheim-server/server/valheim_server.x86_64 \
-  -name "${SERVER_NAME}" \
-  -port $SERVER_PORT \
-  -world "${WORLD_NAME}" \
-  -password "${SERVER_PASSWORD}" \
-  -savedir $DEFAULT_SAVE_DIR \
-  -public $PUBLIC
-export LD_LIBRARY_PATH=$templdpath
+  /valheim-server/server/valheim_server.x86_64 \
+    -name "${SERVER_NAME}" \
+    -port $SERVER_PORT \
+    -world "${WORLD_NAME}" \
+    -password "${SERVER_PASSWORD}" \
+    -savedir $DEFAULT_SAVE_DIR \
+    -public $PUBLIC
+  export LD_LIBRARY_PATH=$templdpath
 
 while true
 do
