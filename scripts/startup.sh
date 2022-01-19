@@ -28,8 +28,8 @@ copyBepInExFull ()
 install_mods ()
 {
   MODS={`echo ${MODS} | tr ', ' ' '`}
-  for MOD in ${#MODS[@]}; do
-    echo $MOD
+  for index in ${!MODS[@]}; do
+    echo $index
   done
 }
 
