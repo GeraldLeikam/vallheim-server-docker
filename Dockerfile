@@ -8,7 +8,7 @@ libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-net-2.0-0 libsdl2-ttf-2.0-0
 COPY ./apps/steamcmd/ /tmp/steamcmd
 RUN cp -r /tmp/steamcmd/* / && rm -r /tmp/steamcmd
 RUN /usr/games/steamcmd +force_install_dir /valheim-server/vanilla-server +login anonymous +app_update 896660 validate +exit
-RUN mkdir -v /valheim-server/save server BepInEx
+RUN mkdir -v /valheim-server/save /valheim-server/server /valheim-server/BepInEx
 COPY ./scripts/game_mode_installer.sh /run/game_mode_installer.sh
 COPY ./scripts/startup.sh /run/startup.sh
 COPY ./scripts/mod_installer.sh /run/mod_installer.sh
