@@ -79,7 +79,7 @@ fi
 if [ "${GAME_MODE}" = "vanilla" ];
 then
   #copyVanilla
-  cp -rv /valheim-server/vanilla-server/* /valheim-server/server/
+  #cp -rv /valheim-server/vanilla-server/* /valheim-server/server/
   export templdpath=$LD_LIBRARY_PATH
   export LD_LIBRARY_PATH=/valheim-server/server/linux64:$LD_LIBRARY_PATH
   export SteamAppId=892970
