@@ -43,7 +43,7 @@ else
   SCRIPT_AUTOUPDATE="false"
 fi
 
-ARGUMENT_STRING="${ARGUMENT_STRING}-password secret "
+ARGUMENT_STRING="${ARGUMENT_STRING}-password mysecret "
 
 if [ $DEBUG = "true" ];
 then
