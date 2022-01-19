@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 DEBUG=true
 DEFAULT_SERVER_NAME="Default Valheim Server"
 DEFAULT_SERVER_PORT=2456
@@ -8,8 +8,7 @@ DEFAULT_SAVE_DIR=/valheim-server/save
 DEFAULT_PUBLIC=1
 DEFAULT_GAME_MODE=vanilla
 
-declare -a mods
-mods=("mod1" "mod2")
+
 
 
 copyVanilla ()

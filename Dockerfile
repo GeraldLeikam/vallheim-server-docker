@@ -19,5 +19,5 @@ COPY ./scripts/mod_installer.sh /run/mod_installer.sh
 RUN chmod +x /run/game_mode_installer.sh
 RUN chmod +x /run/startup.sh
 RUN chmod +X /run/mod_installer.sh
-RUN /bin/sh /run/game_mode_installer.sh
-CMD /bin/sh /run/startup.sh
+RUN /run/game_mode_installer.sh
+CMD /run/startup.sh
