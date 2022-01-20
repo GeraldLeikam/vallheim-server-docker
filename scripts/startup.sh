@@ -35,8 +35,8 @@ install_mods ()
   for mod in $MODS
   do
     echo "installing mod -> ${mod}"
-    echo mod | tr "/" " "
-    echo "${#filename[@]}"
+    myarray=(`echo $mod | tr '/' ' '`)
+    echo "${#myarray[@]}"
   done
 }
 
