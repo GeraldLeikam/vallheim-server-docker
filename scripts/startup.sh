@@ -36,7 +36,7 @@ install_mods ()
   do
     echo "installing mod -> ${mod}"
     filename=($(echo $mod | tr "/" "\n"))
-    echo "${filename[@]}"
+    echo "${#filename[@]}"
   done
 }
 
