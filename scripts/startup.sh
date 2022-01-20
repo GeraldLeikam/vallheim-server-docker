@@ -39,7 +39,7 @@ install_mods ()
     filename="${modarray[${#modarray[@]} - 1]}"
     cd /tmp/
     wget "${mod}" -O "${filename}"
-    unzip $filename
+    echo unzip $filename
     #cp -r "/tmp/current_mod/plugins/*" "/valheim-server/server/BepInEx/plugins"
     #rm -r "/tmp/current_mod"
   done
