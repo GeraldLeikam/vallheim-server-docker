@@ -37,10 +37,10 @@ install_mods ()
     echo "installing mod -> ${mod}"
     IFS='/' read -r -a modarray <<< $mod
     filename="${modarray[${#modarray[@]} - 1]}"
-    echo wget "${mod}" -O "/tmp/${filename}"
-    unzip /tmp/$filename -d /tmp/current_mod
-    cp -r "/tmp/current_mod/plugins/*" "/valheim-server/server/BepInEx/plugins"
-    rm -r "/tmp/current_mod"
+    wget "${mod}" -O "/tmp/${filename}"
+    echo unzip "/tmp/${filename}"
+    #cp -r "/tmp/current_mod/plugins/*" "/valheim-server/server/BepInEx/plugins"
+    #rm -r "/tmp/current_mod"
   done
 }
 
