@@ -40,7 +40,7 @@ install_mods ()
     cd /tmp/
     wget "${mod}" -O "${filename}"
     echo $PWD
-    echo unzip ./$filename
+    unzip ./$filename
     #cp -r "/tmp/current_mod/plugins/*" "/valheim-server/server/BepInEx/plugins"
     #rm -r "/tmp/current_mod"
   done
