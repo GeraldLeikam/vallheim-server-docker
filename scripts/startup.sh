@@ -35,8 +35,9 @@ install_mods ()
   for mod in $MODS
   do
     echo "installing mod -> ${mod}"
-    IFS='/' read -r -a myarray <<< $mod
-    echo "${myarray[${#myarray[@]} - 1]}"
+    IFS='/' read -r -a modarray <<< $mod
+    filename="${modarray[${#modarray[@]} - 1]}"
+    wget "${mod}" -O "/tmp/${filename}"
   done
 }
 
