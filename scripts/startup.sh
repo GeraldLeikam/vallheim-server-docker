@@ -40,8 +40,8 @@ install_mods ()
     cd /tmp/
     wget "${mod}" -O "./${filename}"
     unzip $filename -d /tmp/temp_mod
-    cp -r "/tmp/temp_mod/plugins/*" "/valheim-server/server/BepInEx/plugins"
-    rm -r "/tmp/temp_mod"
+    #cp -r "/tmp/temp_mod/plugins/*" "/valheim-server/server/BepInEx/plugins"
+    #rm -r "/tmp/temp_mod"
   done
 }
 
