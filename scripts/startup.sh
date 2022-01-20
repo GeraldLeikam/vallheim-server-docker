@@ -35,7 +35,7 @@ install_mods ()
   for mod in $MODS
   do
     echo "installing mod -> ${mod}"
-    IFS=', ' read -r -a myarray <<< $mod
+    IFS='/' read -r -a myarray <<< $mod
     echo "${#myarray[@]}"
   done
 }
